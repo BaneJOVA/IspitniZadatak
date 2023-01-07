@@ -1,13 +1,7 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
-using SwagProject.Driver;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace SwagProject.Page
+namespace IspitniZadatak.Page
 {
     internal class ProductPage
     {

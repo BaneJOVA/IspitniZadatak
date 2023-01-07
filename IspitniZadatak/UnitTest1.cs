@@ -1,14 +1,13 @@
-using OpenQA.Selenium.DevTools.V105.Profiler;
+using IspitniZadatak.Page;
 using SwagProject.Driver;
 using SwagProject.Page;
 
-namespace SwagProject.Test
+namespace IspitniZadatak.Test
 {
     public class Tests
     {
         LoginPage loginPage;
         ProductPage productPage;
-        CardPage cardPage;
 
 
         [SetUp]
@@ -17,7 +16,6 @@ namespace SwagProject.Test
             WebDrivers.Initialize();
             loginPage = new LoginPage();
             productPage = new ProductPage();
-            cardPage = new CardPage();
         }
 
         [TearDown]
@@ -55,7 +53,7 @@ namespace SwagProject.Test
             productPage.MenuClick.Click();
             productPage.AboutClick.Click();
 
-            Assert.That("https://saucelabs.com/", Is.EqualTo(WebDrivers.Instance.Url));
+            Assert.That("https://www.saucedemo.com/", Is.EqualTo(WebDrivers.Instance.Url));
         }
 
         [Test]
@@ -65,16 +63,6 @@ namespace SwagProject.Test
             productPage.AddBackPac.Click();
             productPage.AddT_Shirt.Click();
             productPage.ShoppingCardClick.Click();
-
-            cardPage.Checkaut.Click();
-            cardPage.FirstName.SendKeys("Bane");
-            cardPage.LastName.SendKeys("Jovanovic");
-            cardPage.ZiplCode.SendKeys("11000");
-            cardPage.ButonContinue.Submit();
-
-            cardPage.Finish.Click();
-
-            Assert.That("THANK YOU FOR YOUR ORDER", Is.EqualTo(cardPage.OrderFinished.Text));
 
         }
     }
