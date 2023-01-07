@@ -10,7 +10,7 @@ namespace SwagProject.Page
 {
     public class LoginPage
     {
-        private IWebDriver driver = WebDrivers.Instance;
+        private IWebDriver driver = WebDriver.Instance;
 
         public IWebElement UserName => driver.FindElement(By.Id("user-name"));
         public IWebElement Password => driver.FindElement(By.Id("password"));
